@@ -5,7 +5,7 @@ from lifelines.statistics import logrank_test
 
 
 def survival_curve(data, time_label, event_label, group_label, group_1, group_2, group_1_name, group_2_name, x_label, y_label):
-  
+
     kmf = KaplanMeierFitter()
     fit = kmf.fit(data[time_label], data[event_label])
     fit.median_survival_time_
