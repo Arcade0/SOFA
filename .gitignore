@@ -280,3 +280,4 @@ sofa_data/ventilation.csv
 sofa_data/ventilator_setting.csv
 sofa_data/vitalsign.csv
 sofa_data/weight_durations.csv
+predict_model/roc_curve.png
