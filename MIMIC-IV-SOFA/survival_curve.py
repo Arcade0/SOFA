@@ -4,7 +4,7 @@ from lifelines import KaplanMeierFitter
 from lifelines.statistics import logrank_test
 
 
-def survival_curve(data, time_label, event_label, group_label, group_1, group_2, group_1_name, group_2_name, x_label, y_label):
+def survival_curve(data, time_label, event_label, group_label, group_1, group_2, group_1_name, group_2_name, x_label, y_label, xlim, ylim):
 
     kmf = KaplanMeierFitter()
     fit = kmf.fit(data[time_label], data[event_label])
@@ -24,8 +24,8 @@ def survival_curve(data, time_label, event_label, group_label, group_1, group_2,
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     # plt.title("Sruvival Curve")
-    # plt.xlim([0,30])
-    # plt.ylim([0.6,1])
+    plt.xlim(xlim)
+    plt.ylim(ylim )
     plt.show()
 
     lr = logrank_test(data[time_label].loc[g1],
